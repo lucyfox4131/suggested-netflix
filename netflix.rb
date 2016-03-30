@@ -1,3 +1,5 @@
+require './tree'
+
 tree = Tree.new
 
 
