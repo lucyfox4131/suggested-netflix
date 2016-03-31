@@ -1,39 +1,32 @@
 require './tree'
 
+# tree = Tree.new
+
+
+# tree.insert(61, "Bill & Ted's Excellent Adventure")
+# tree.insert(16, "Johnny English")
+# tree.insert(92, "Sharknado 3")
+# tree.insert(92, "Sharknado 3")
+# tree.insert(17, "Yoyoyo")
+# tree.insert(2, "Frozen")
+# tree.insert(1, "asdf")
+# tree.insert(100, "SLdgkh")
+# puts "---------------------"
+# puts tree.search_tree(92).rating
+# puts tree.search_tree(2).rating
+# puts tree.search_tree(100).rating
+#
+# # puts tree.sort_in_order
+# tree.sort
+
+
 tree = Tree.new
+tree.insert(61, "Movie")
+tree.insert(34, "2nd Movie")
+tree.insert(16, "Another")
+tree.insert(78, "Woohoo")
 
-
-tree.insert(61, "Bill & Ted's Excellent Adventure")
-tree.insert(16, "Johnny English")
-tree.insert(92, "Sharknado 3")
-tree.insert(92, "Sharknado 3")
-tree.insert(17, "Yoyoyo")
-tree.insert(2, "Frozen")
-tree.insert(1, "asdf")
-tree.insert(100, "SLdgkh")
-puts "---------------------"
-puts tree.search_tree(92).rating
-puts tree.search_tree(2).rating
-puts tree.search_tree(100).rating
-
-
-puts "___________________________"
-puts tree.include?(99)
-puts tree.include?(100)
-# tree.insert(50, "Hannibal Buress: Animal Furnace")
-
-puts "------------------------"
-puts tree.depth_of(61)
-puts tree.depth_of(16)
-puts tree.depth_of(92)
-puts tree.depth_of(17)
-puts tree.depth_of(2)
-puts tree.depth_of(1)
-
-puts "------------------------"
-max = tree.search_for_max
-puts "max #{max.rating}"
-puts tree.max
+tree.sort
 
 #if no head, data = head
 #if head, pass of to head node to add new value

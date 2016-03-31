@@ -1,10 +1,12 @@
 require "./node"
 
 class Tree
+  attr_accessor :sort
 
   def initialize
     @root = nil
     @depth_counter = 0 #temporary storage of depth for depth_of method
+    @sorted_array = []
   end
 
   def is_tree_empty?
@@ -51,14 +53,11 @@ class Tree
     if include?(rating)
       @depth_counter = 0
       search_tree(rating)
-      return "The depth of #{rating} is #{@depth_counter}"
-    else
-      puts "That value isn't in the tree"
+      return @depth_counter
     end
   end
 
   def search_for_max(current_node = @root)
-    puts "current node #{current_node.rating}"
     if current_node.right.nil?
       return current_node
     elsif current_node.right
@@ -69,8 +68,10 @@ class Tree
   end
 
   def max
+    if @root == nil
+      return nil
+    end
     returned_node = search_for_max(@root)
-    puts returned_node
     if returned_node == nil
       puts "There are no values in your tree so you do not have a max."
     else
@@ -80,32 +81,48 @@ class Tree
   end
 
   def search_for_min(current_node = @root)
-    if current_node.left
-      search_for_max(current_node.left)
-    elsif current_node.left.nil?
+    if current_node.left.nil?
       return current_node
+    elsif current_node.left
+      search_for_min(current_node.left)
     else
       return nil
     end
   end
 
   def min
+    if @root == nil
+      return nil
+    end
     returned_node = search_for_min(@root)
     if returned_node == nil
-      puts "There are no values in your tree so you do not have a max."
+      puts "There are no values in your tree so you do not have a min."
     else
-      puts min_hash = {returned_node.title => returned_node.rating}
+      min_hash = {returned_node.title => returned_node.rating}
+      return min_hash
     end
   end
 
+  def sort
+    sort_in_order
+    puts @sorted_array
+  end
+
+  def sort_in_order(node = @root)
+    if node.left != nil
+      sort_in_order(node.left)
+    end
+    @sorted_array << {node.title => node.rating}
+    if node.right != nil
+      sort_in_order(node.right)
+    end
+  end
 
   def search_tree(rating, current_node = @root)
     if current_node.rating == rating
-      puts "returning node #{current_node.rating}"
       return current_node
     elsif current_node.rating > rating
       if current_node.left == nil
-        puts "returning node #{current_node.rating}"
         return current_node
       else
         @depth_counter = @depth_counter + 1
@@ -113,7 +130,6 @@ class Tree
       end
     else
       if current_node.right == nil
-        puts "returning node #{current_node.rating}"
         return current_node
       else
         @depth_counter = @depth_counter + 1
