@@ -23,10 +23,12 @@ class TreeTest < Minitest::Test
   def test_create_the_root_node
     tree = Tree.new
     node = tree.insert(12, "Shawkshank Redemption")
-
-    assert_equal , 
+    assert_equal false, node.is_empty?
   end
 
+
+  def test_the_max_value_if_no_tree
+  end
 
 
 

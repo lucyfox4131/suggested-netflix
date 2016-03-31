@@ -60,27 +60,39 @@ class Tree
   def search_for_max(current_node = @root)
     if current_node.right
       search_for_max(current_node.right)
-    else
+    elsif current_node.right.nil?
       return current_node
+    else
+      return nil
     end
   end
 
   def max
     returned_node = search_for_max(@root)
-    puts max_hash = {returned_node.title => returned_node.rating}
+    if returned_node == nil
+      puts "There are no values in your tree so you do not have a max."
+    else
+      puts max_hash = {returned_node.title => returned_node.rating}
+    end
   end
 
   def search_for_min(current_node = @root)
     if current_node.left
       search_for_max(current_node.left)
-    else
+    elsif current_node.left.nil?
       return current_node
+    else
+      return nil
     end
   end
 
   def min
     returned_node = search_for_min(@root)
-    puts min_hash = {returned_node.title => returned_node.rating}
+    if returned_node == nil
+      puts "There are no values in your tree so you do not have a max."
+    else
+      puts min_hash = {returned_node.title => returned_node.rating}
+    end
   end
 
 
