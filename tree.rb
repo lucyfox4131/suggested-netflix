@@ -57,6 +57,33 @@ class Tree
     end
   end
 
+  def search_for_max(current_node = @root)
+    if current_node.right
+      search_for_max(current_node.right)
+    else
+      return current_node
+    end
+  end
+
+  def max
+    returned_node = search_for_max(@root)
+    puts max_hash = {returned_node.title => returned_node.rating}
+  end
+
+  def search_for_min(current_node = @root)
+    if current_node.left
+      search_for_max(current_node.left)
+    else
+      return current_node
+    end
+  end
+
+  def min
+    returned_node = search_for_min(@root)
+    puts min_hash = {returned_node.title => returned_node.rating}
+  end
+
+
   def search_tree(rating, current_node = @root)
     if current_node.rating == rating
       puts "returning node #{current_node.rating}"
