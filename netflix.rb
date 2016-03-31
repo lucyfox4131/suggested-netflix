@@ -31,11 +31,15 @@ tree = Tree.new
 
 puts tree.load('movies.txt')
 
-puts tree.get_count_at_depth(0)
-puts tree.get_count_at_depth(1)
-puts tree.get_count_at_depth(2)
-puts tree.get_count_at_depth(3)
-puts tree.get_count_at_depth(4)
+puts
+
+puts tree.height
+
+# puts tree.get_count_at_depth(0)
+# puts tree.get_count_at_depth(1)
+# puts tree.get_count_at_depth(2)
+# puts tree.get_count_at_depth(3)
+# puts tree.get_count_at_depth(4)
 
 
 #if no head, data = head

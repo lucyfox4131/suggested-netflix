@@ -7,6 +7,8 @@ class Tree
     @root = nil
     @depth_counter = 0 #temporary storage of depth for depth_of method
     @sorted_array = []
+    @left_height = 0
+    @right_height = 0
   end
 
   def is_tree_empty?
@@ -128,18 +130,47 @@ class Tree
     counter
   end
 
-  def get_count_at_depth( target_level, node = @root, current_level = 0 )
-    if node.nil?
-      return 0
-    end
-    if current_level == target_level
-      return 1
-    end
-    next_level = current_level += 1
-    rightSide = get_count_at_depth(target_level, node.right, next_level)
-    leftSide = get_count_at_depth(target_level, node.left, next_level) 
-    rightSide + leftSide
-  end
+  # def get_node_array_at_depth(target_level)
+  #   level_array = [][]
+  #
+  # end
+  #
+  # def get_count_at_depth( target_level, node = @root, level_array, current_level = 0 )
+  #   if node.nil?
+  #     return 0
+  #   end
+  #   if current_level == target_level
+  #     level_array[current_level] = node
+  #     return 1
+  #   end
+  #   next_level = current_level += 1
+  #   rightSide = get_count_at_depth(target_level, node.right, next_level)
+  #   leftSide = get_count_at_depth(target_level, node.left, next_level)
+  #   rightSide + leftSide
+  # end
+
+  # def get_height(current_node = @root, left_height = @left_height, right_height = @righ_height)
+  #
+  #   if current_node.left
+  #     @left_height += 1
+  #     current_node = current_node.left
+  #     get_height(current_node, @left_height, @right_height)
+  #   elsif current_node.right
+  #     @right_height += 1
+  #     current_node = current_node.right
+  #     get_height(current_node, @left_height, @right_height)
+  #   end
+  #
+  # end
+  #
+  # def height
+  #   get_height
+  #   if @left_height > @right_height
+  #     return @left_height +1
+  #   else
+  #     return @right_height +1
+  #   end
+  # end
 
   def search_tree(rating, current_node = @root)
     if current_node.rating == rating
