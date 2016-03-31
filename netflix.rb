@@ -30,7 +30,10 @@ puts tree.depth_of(17)
 puts tree.depth_of(2)
 puts tree.depth_of(1)
 
-
+puts "------------------------"
+max = tree.search_for_max
+puts "max #{max.rating}"
+puts tree.max
 
 #if no head, data = head
 #if head, pass of to head node to add new value
