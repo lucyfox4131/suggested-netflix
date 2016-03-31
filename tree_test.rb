@@ -9,8 +9,6 @@ class TreeTest < Minitest::Test
     assert_equal Tree, tree.class
   end
 
-  #insert tests
-
   def test_if_empty_tree
     tree = Tree.new
     assert_equal true, tree.is_empty?
@@ -22,7 +20,14 @@ class TreeTest < Minitest::Test
     assert_equal Node, new_node.class
   end
 
-  
+  def test_create_the_root_node
+    tree = Tree.new
+    node = tree.insert(12, "Shawkshank Redemption")
+
+    assert_equal , 
+  end
+
+
 
 
 

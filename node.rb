@@ -1,11 +1,24 @@
 class Node
-attr_reader :rating, :title, :left_child, :right_child
+attr_accessor :rating, :title, :left, :right
 
   def initialize(rating, title, left_child = nil, right_child = nil)
     @rating = rating
     @title = title
-    @left_child = left_child #these are less than
-    @right_child = right_child #these are greater than
+    @left = left_child #these are less than
+    @right = right_child #these are greater than
+  end
+
+#array1.is_equal(array2)
+  def is_equal?(rating)
+    @rating == rating
+  end
+
+  def is_greater?(rating)
+    @rating > rating
+  end
+
+  def is_less_than?(rating)
+    @rating < rating
   end
 
 #   def rating
