@@ -1,6 +1,6 @@
 require './tree'
 
-# tree = Tree.new
+tree = Tree.new
 
 
 # tree.insert(61, "Bill & Ted's Excellent Adventure")
@@ -20,14 +20,17 @@ require './tree'
 # tree.sort
 
 
-tree = Tree.new
-tree.insert(61, "Movie")
-tree.insert(34, "2nd Movie")
-tree.insert(16, "Another")
-tree.insert(78, "Woohoo")
+# tree = Tree.new
+# tree.insert(61, "Movie")
+# tree.insert(34, "2nd Movie")
+# tree.insert(16, "Another")
+# tree.insert(78, "Woohoo")
+#
+# tree.sort
 
+
+puts tree.load('movies.txt')
 tree.sort
-
 #if no head, data = head
 #if head, pass of to head node to add new value
 #node class handling search functions, tree is dumb. Basically only handling rare cases

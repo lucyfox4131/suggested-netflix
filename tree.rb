@@ -118,6 +118,16 @@ class Tree
     end
   end
 
+  def load(file = 'movies.txt')
+    counter = 0;
+    File.open(file).readlines.each do |line|
+      input_array = line.chomp.split(",")
+      counter += 1
+      insert(input_array[0].to_i, input_array[1])
+    end
+    counter
+  end
+
   def search_tree(rating, current_node = @root)
     if current_node.rating == rating
       return current_node
