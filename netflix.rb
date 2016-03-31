@@ -9,6 +9,7 @@ tree.insert(92, "Sharknado 3")
 tree.insert(92, "Sharknado 3")
 tree.insert(17, "Yoyoyo")
 tree.insert(2, "Frozen")
+tree.insert(1, "asdf")
 tree.insert(100, "SLdgkh")
 puts "---------------------"
 puts tree.search_tree(92).rating
@@ -20,6 +21,14 @@ puts "___________________________"
 puts tree.include?(99)
 puts tree.include?(100)
 # tree.insert(50, "Hannibal Buress: Animal Furnace")
+
+puts "------------------------"
+puts tree.depth_of(61)
+puts tree.depth_of(16)
+puts tree.depth_of(92)
+puts tree.depth_of(17)
+puts tree.depth_of(2)
+puts tree.depth_of(1)
 
 
 

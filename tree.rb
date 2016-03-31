@@ -1,11 +1,10 @@
 require "./node"
 
 class Tree
-  #may not need this attr_reader :root
 
-  def initialzie
-    @root = Node.new(nil,nil,nil,nil)
-    @depth = 0
+  def initialize
+    @root = nil
+    @depth_counter = 0 #temporary storage of depth for depth_of method
   end
 
   def is_empty?
@@ -32,16 +31,11 @@ class Tree
       elsif
         returned_node = search_tree(node_to_insert.rating)
         if returned_node.rating == node_to_insert.rating
-          puts "Already in tree"
         elsif returned_node.rating > node_to_insert.rating
           returned_node.left = node_to_insert
         else
           returned_node.right = node_to_insert
         end
-
-        #before I send this to search I need to make sure I only send the rating
-        #we know we have a root, we want to add a new value
-        #call search method on node_to_insert
       end
     else
       return "bad data"
@@ -55,7 +49,9 @@ class Tree
 
   def depth_of(rating)
     if include?(rating)
+      @depth_counter = 0
       search_tree(rating)
+      return "The depth of #{rating} is #{@depth_counter}"
     else
       puts "That value isn't in the tree"
     end
@@ -70,14 +66,16 @@ class Tree
         puts "returning node #{current_node.rating}"
         return current_node
       else
-        search_tree(rating, current_node.left)
+        @depth_counter = @depth_counter + 1
+        return search_tree(rating, current_node.left)
       end
     else
       if current_node.right == nil
         puts "returning node #{current_node.rating}"
         return current_node
       else
-        search_tree(rating, current_node.right)
+        @depth_counter = @depth_counter + 1
+        return search_tree(rating, current_node.right)
       end
     end
   end
