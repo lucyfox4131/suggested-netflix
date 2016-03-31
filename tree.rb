@@ -128,6 +128,19 @@ class Tree
     counter
   end
 
+  def get_count_at_depth( target_level, node = @root, current_level = 0 )
+    if node.nil?
+      return 0
+    end
+    if current_level == target_level
+      return 1
+    end
+    next_level = current_level += 1
+    rightSide = get_count_at_depth(target_level, node.right, next_level)
+    leftSide = get_count_at_depth(target_level, node.left, next_level) 
+    rightSide + leftSide
+  end
+
   def search_tree(rating, current_node = @root)
     if current_node.rating == rating
       return current_node

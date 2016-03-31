@@ -30,7 +30,14 @@ tree = Tree.new
 
 
 puts tree.load('movies.txt')
-tree.sort
+
+puts tree.get_count_at_depth(0)
+puts tree.get_count_at_depth(1)
+puts tree.get_count_at_depth(2)
+puts tree.get_count_at_depth(3)
+puts tree.get_count_at_depth(4)
+
+
 #if no head, data = head
 #if head, pass of to head node to add new value
 #node class handling search functions, tree is dumb. Basically only handling rare cases
