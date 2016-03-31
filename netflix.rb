@@ -20,20 +20,20 @@ tree = Tree.new
 # tree.sort
 
 
-# tree = Tree.new
-# tree.insert(61, "Movie")
-# tree.insert(34, "2nd Movie")
-# tree.insert(16, "Another")
-# tree.insert(78, "Woohoo")
+tree = Tree.new
+tree.insert(61, "Movie")
+tree.insert(34, "2nd Movie")
+tree.insert(16, "Another")
+tree.insert(78, "Woohoo")
+
+tree.sort
+
+
+# puts tree.load('movies.txt')
 #
-# tree.sort
-
-
-puts tree.load('movies.txt')
-
-puts
-
-puts tree.height
+# puts
+#
+# puts tree.height
 
 # puts tree.get_count_at_depth(0)
 # puts tree.get_count_at_depth(1)

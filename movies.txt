@@ -7,3 +7,10 @@
 7, I Love You Phillip Morris
 9, A Ballerina's Tale
 67, Hellions
+
+
+
+
+#Whenever you use an integer in multiple places (testing)
+#helper methods in tests/further refactor
+#attr_reader for rating and title, they are constant
