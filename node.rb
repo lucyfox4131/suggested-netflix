@@ -8,7 +8,32 @@ attr_reader :rating, :title, :left_child, :right_child
     @right_child = right_child #these are greater than
   end
 
-
+#   def rating
+#     @rating
+#   end
+#
+#   def title
+#     @title
+#   end
+#
+#   def left_child
+#     @left_child
+#   end
+#
+#   def right_child
+#     @right_child
+#   end
+#
+#
+#
+#   #^these are the things a node knows
+# #what are the questions I can ask this node?
+# #node, what is your rating?
+# #node, what is your title?
+# #node, do you have a left_child?
+# #node, do you have a right_child?
+#
+#
 
 
   #this will return until our current_node.next_node == nil
@@ -16,28 +41,6 @@ attr_reader :rating, :title, :left_child, :right_child
   #methods decide what to do with that node:
   #aka insert, depth_of, max, min, etc.....
 
-
-  # def max(current_node = @root)
-  #     traverse_to_max
-  # end
-  #
-  #
-  # def traverse_to_max(current_node = @root)
-  #   #or just put in what you know would be max value and traverse and return current value that would be the leftmost
-  #   if current_node.@right_child.nil?
-  #     current_node
-  #   else
-  #     traverse_to_max(current_node.@right_child)
-  #   end
-  # end
-  #
-  # def traverse_to_min(current_node = @root)
-  #   if current_node.@left_child.nil?
-  #     current_node
-  #   else
-  #     traverse_to_min(current_node.@left_child)
-  #   end
-  # end
 
 end
 
@@ -50,3 +53,7 @@ end
 # elsif new_node >= root
 # #go to the right child
 # end
+
+#pull out boolean logic into small methods
+# def count
+#   return 1 if no head node
